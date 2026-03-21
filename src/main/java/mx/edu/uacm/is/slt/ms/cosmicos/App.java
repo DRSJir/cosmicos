@@ -1,4 +1,4 @@
-package cosmicos;
+package mx.edu.uacm.is.slt.ms.cosmicos;
 
 import io.javalin.Javalin;
 import io.javalin.http.staticfiles.Location;
