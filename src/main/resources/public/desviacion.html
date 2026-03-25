@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Desviación</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+	<link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+
+    <div id="sidebar-container"></div>
+
+    <main class="main-content">
+        <div class="container-card">
+            <header class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom border-secondary">
+                <div>
+                    <h1 class="h4 mb-1">Desviación de Esfuerzo</h1>
+                    <small class="text-secondary">Métrica: <b>Eficiencia de Estimación (JSON)</b></small>
+                </div>
+                <div id="status-badge" class="status-badge">Sincronizando...</div>
+            </header>
+
+            <div id="main-chart"></div>
+        </div>
+    </main>
+
+    <script src="/js/graficaDesviacion.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
