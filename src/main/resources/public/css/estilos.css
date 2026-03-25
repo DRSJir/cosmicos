@@ -1,0 +1,43 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    display: flex; /* Sidebar a la izquierda, contenido a la derecha */
+    min-height: 100vh;
+}
+
+/* Área de contenido principal: AQUÍ ESTÁ EL TRUCO */
+.main-content {
+    flex-grow: 1; /* Ocupa todo el espacio restante */
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+    padding: 40px;
+    background-color: var(--bg-color);
+}
+
+.container-card {
+    width: 100%;
+    max-width: 1100px; /* <--- De 900px a 1200px para que sea más ancha */
+    background: var(--card-bg);
+    padding: 40px;     /* Aumentamos un poco el padding interno */
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Badge y otros estilos (se mantienen igual) */
+.status-badge { padding: 6px 16px; border-radius: 99px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; }
+.status-CRITICO { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #ef4444; }
+.status-ADVERTENCIA { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #f59e0b; }
+.status-OPTIMO { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
+.status-SUBESTIMADO { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #3b82f6; }

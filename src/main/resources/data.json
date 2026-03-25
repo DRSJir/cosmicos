@@ -1,0 +1,8 @@
+[
+  { "etiqueta": "Sprint 1", "estimado": 40.0, "real": 45.0 },
+  { "etiqueta": "Sprint 2", "estimado": 40.0, "real": 38.0 },
+  { "etiqueta": "Sprint 3", "estimado": 45.0, "real": 50.0 },
+  { "etiqueta": "Sprint 4", "estimado": 40.0, "real": 38.0 },
+  { "etiqueta": "Sprint 5", "estimado": 45.0, "real": 70.0 },
+  { "etiqueta": "Sprint 6", "estimado": 30.0, "real": 35.0 }
+]
