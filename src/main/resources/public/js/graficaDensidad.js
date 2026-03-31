@@ -1,3 +1,12 @@
+// 2. Simulación de carga de sidebar (Asegúrate de llamar a la función aquí)
+fetch('/barraLateral.html') // O como sea que estés cargando tu sidebar
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('sidebar-container').innerHTML = data;
+        
+        resaltarEnlaceActivo();
+    });
+
 // 1. Cargar componentes compartidos
 fetch('/barraLateral.html')
     .then(response => response.text())
