@@ -7,6 +7,8 @@
 
 <link rel="stylesheet" href="css/estilos.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -19,49 +21,61 @@
 
 <div class="container-card">
 
-<h2>Productividad del Equipo</h2>
+<h1> Productividad del Equipo</h1>
 
-<p>Ingresa los datos del equipo para calcular el indicador.</p>
+<p class="descripcion">
+Ingresa los datos del equipo para calcular el indicador de productividad.
+</p>
 
-<label>Tareas completadas</label>
-<input type="number" id="tareas">
+<div class="form-grid">
 
-<br><br>
+<div class="input-group">
+<label> Tareas completadas</label>
+<input type="number" id="tareas" placeholder="Ej: 12">
+</div>
 
-<label>Días trabajados</label>
-<input type="number" id="dias">
+<div class="input-group">
+<label> Días trabajados</label>
+<input type="number" id="dias" placeholder="Ej: 4">
+</div>
 
-<br><br>
+</div>
 
-<button onclick="calcular()">Calcular productividad</button>
+<button class="btn-calcular" onclick="calcular()">
+Calcular productividad
+</button>
 
-<br><br>
+<div class="resultados">
 
-<h3 id="resultado"></h3>
+<h2 id="resultado">0</h2>
 
 <span id="estado" class="status-badge"></span>
 
-<br><br>
+</div>
 
-<h3>Indicador de productividad</h3>
+<h3 class="titulo-indicador">Indicador de productividad</h3>
 
 <div class="gauge">
 
-    <div class="gauge-body">
+<div class="gauge-body">
 
-        <div class="gauge-scale">
-            <div class="scale-red"></div>
-            <div class="scale-yellow"></div>
-            <div class="scale-green"></div>
-        </div>
+<div class="gauge-scale">
+<div class="scale-red"></div>
+<div class="scale-yellow"></div>
+<div class="scale-green"></div>
+</div>
 
-        <div class="gauge-needle" id="needle"></div>
+<div class="gauge-needle" id="needle"></div>
 
-        <div class="gauge-center">
-            <span id="gaugeValue">0</span>
-        </div>
+<div class="gauge-center">
+<span id="gaugeValue">0</span>
+</div>
 
-    </div>
+</div>
+
+</div>
+
+</div>
 
 </div>
 
