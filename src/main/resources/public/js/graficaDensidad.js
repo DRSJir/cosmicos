@@ -1,3 +1,52 @@
+let mainChart = null;
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Cargar la barra lateral (Tu código actual)
+    fetch('/barraLateral.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('sidebar-container').innerHTML = data;
+            if (typeof resaltarEnlaceActivo === 'function') resaltarEnlaceActivo();
+        });
+
+    // Cargar datos iniciales desde el servidor (API de Java)
+    fetch('/api/densidad')
+        .then(res => res.json())
+        .then(data => {
+            renderizarGrafica(data);
+            actualizarInterfaz(data);
+        })
+        .catch(err => console.error("Error inicial:", err));
+});
+
+document.getElementById('btn-cargar').addEventListener('click', function() {
+    const fileInput = document.getElementById('input-json');
+    const file = fileInput.files[0];
+
+    if (!file) return alert("Selecciona un archivo .json primero");
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    // Enviamos el archivo al nuevo endpoint de Java
+    fetch('/api/densidad/subir', {
+        method: 'POST',
+        body: formData
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.error) throw new Error(data.error);
+
+            // USAMOS LAS OPCIONES DE JAVA:
+            // El JSON que regresa ya viene procesado por el modelo DensidadDefectos.java
+            renderizarGrafica(data);
+            actualizarInterfaz(data);
+
+            console.log("Gráfica actualizada con el archivo subido.");
+        })
+        .catch(err => alert("Error al procesar en el servidor: " + err.message));
+});
+
 // 2. Simulación de carga de sidebar (Asegúrate de llamar a la función aquí)
 fetch('/barraLateral.html') // O como sea que estés cargando tu sidebar
     .then(response => response.text())
@@ -29,6 +78,17 @@ fetch('/api/densidad')
     });
 
 function renderizarGrafica(apiData) {
+    const contenedor = document.querySelector("#density-chart");
+
+    // 1. Limpieza absoluta del HTML interno
+    contenedor.innerHTML = "";
+
+    // 2. Destruir instancia previa si existe
+    if (mainChart) {
+        mainChart.destroy();
+        mainChart = null; // Forzamos el reset
+    }
+
     const options = {
         // Configuramos series mixtas: Barras para Defectos, Línea para KLOC
         series: [

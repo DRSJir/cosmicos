@@ -17,6 +17,7 @@ public class App {
 	    
 	    // Definición de la ruta usando referencia de método
 	    app.get("/api/desviacion", DesviacionControlador::obtenerAnalisisDesviacion);
+		app.post("/api/densidad/subir", DensidadDefectosControlador::subirYAnalizar);
 
 		app.get("/api/densidad", DensidadDefectosControlador::obtenerAnalisisDensidadDefectos);
 	}

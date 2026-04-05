@@ -26,4 +26,27 @@ public class DensidadDefectosControlador {
             ctx.status(500).result("Error al procesar la métrica de densidad: \"" + e.getMessage());
         }
     }
+
+    public static void subirYAnalizar(Context ctx) {
+        try {
+            var archivoSubido = ctx.uploadedFile("file");
+
+            if (archivoSubido == null) {
+                ctx.status(400).result("{\"error\": \"No se subió ningún archivo\"}");
+                return;
+            }
+
+            DensidadDefectos modelo = new DensidadDefectos();
+
+            // Porcesar el contenido del archivo
+            modelo.procesarDatos(archivoSubido.content());
+
+            // Devolvemos el JSON procesado
+            ctx.contentType("application/json");
+            ctx.result(modelo.prepararDatosApex());
+
+        } catch (Exception e) {
+            ctx.status(500).result("{\"error\": \"Error al procesar archivo: " + e.getMessage() + "\"}");
+        }
+    }
 }
