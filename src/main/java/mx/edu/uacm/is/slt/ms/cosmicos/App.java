@@ -15,10 +15,15 @@ public class App {
 	    
 	    app.get("/", ctx -> ctx.redirect("/desviacion.html"));
 	    
-	    // Definición de la ruta usando referencia de método
-	    app.get("/api/desviacion", DesviacionControlador::obtenerAnalisisDesviacion);
+	    
+
 	    // Ruta productividad
 	    app.post("/productividad", ProductividadController::calcular);
+
+	 // Definición de la ruta usando referencia de método
+	    app.get("/api/desviacion", DesviacionControlador::obtenerAnalisisDesviacion);
+	    app.post("/api/subir-desviacion", DesviacionControlador::subirYAnalizar);
+
 	}
 
 }
