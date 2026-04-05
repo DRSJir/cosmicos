@@ -20,9 +20,13 @@ public class App {
 	    // Ruta productividad
 	    app.post("/productividad", ProductividadController::calcular);
 
-	 // Definición de la ruta usando referencia de método
+	    // Definición de la ruta usando referencia de método
 	    app.get("/api/desviacion", DesviacionControlador::obtenerAnalisisDesviacion);
 	    app.post("/api/subir-desviacion", DesviacionControlador::subirYAnalizar);
+    
+      //Densidad de defectos
+      app.get("/api/densidad", DensidadDefectosControlador::obtenerAnalisisDensidadDefectos);
+      app.post("/api/densidad/subir", DensidadDefectosControlador::subirYAnalizar);
 
 	}
 
