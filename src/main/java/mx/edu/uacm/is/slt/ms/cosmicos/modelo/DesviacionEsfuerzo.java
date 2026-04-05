@@ -43,7 +43,7 @@ public class DesviacionEsfuerzo {
         double desviacion = aplicarMetrica();
         if (desviacion > 15) return "CRITICO";
         if (desviacion > 5) return "ADVERTENCIA";
-        if (desviacion < -5) return "SUBESTIMADO";
+        if (desviacion < -5) return "SOBREESTIMADO";
         return "OPTIMO";
     }
 
