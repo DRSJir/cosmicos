@@ -15,11 +15,19 @@ public class App {
 	    
 	    app.get("/", ctx -> ctx.redirect("/desviacion.html"));
 	    
+	    
+
+	    // Ruta productividad
+	    app.post("/productividad", ProductividadController::calcular);
+
 	    // Definición de la ruta usando referencia de método
 	    app.get("/api/desviacion", DesviacionControlador::obtenerAnalisisDesviacion);
-		app.post("/api/densidad/subir", DensidadDefectosControlador::subirYAnalizar);
+	    app.post("/api/subir-desviacion", DesviacionControlador::subirYAnalizar);
+    
+      //Densidad de defectos
+      app.get("/api/densidad", DensidadDefectosControlador::obtenerAnalisisDensidadDefectos);
+      app.post("/api/densidad/subir", DensidadDefectosControlador::subirYAnalizar);
 
-		app.get("/api/densidad", DensidadDefectosControlador::obtenerAnalisisDensidadDefectos);
 	}
 
 }

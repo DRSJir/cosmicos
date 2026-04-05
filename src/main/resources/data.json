@@ -1,8 +1,32 @@
 [
-  { "etiqueta": "Sprint 1", "estimado": 40.0, "real": 45.0 },
-  { "etiqueta": "Sprint 2", "estimado": 40.0, "real": 38.0 },
-  { "etiqueta": "Sprint 3", "estimado": 45.0, "real": 50.0 },
-  { "etiqueta": "Sprint 4", "estimado": 40.0, "real": 38.0 },
-  { "etiqueta": "Sprint 5", "estimado": 45.0, "real": 70.0 },
-  { "etiqueta": "Sprint 6", "estimado": 30.0, "real": 35.0 }
+  { 
+    "etiqueta": "Definición de Métricas", 
+    "estimado": 20.0, 
+    "real": 22.5 
+  },
+  { 
+    "etiqueta": "Estructura y Carga JSON", 
+    "estimado": 35.0, 
+    "real": 40.0 
+  },
+  { 
+    "etiqueta": "Procesamiento de Datos", 
+    "estimado": 45.0, 
+    "real": 42.0 
+  },
+  { 
+    "etiqueta": "Lógica de Umbrales", 
+    "estimado": 30.0, 
+    "real": 48.0 
+  },
+  { 
+    "etiqueta": "Integración de Gráficas", 
+    "estimado": 40.0, 
+    "real": 38.5 
+  },
+  { 
+    "etiqueta": "Refinamiento de UI/UX", 
+    "estimado": 25.0, 
+    "real": 20.0 
+  }
 ]
