@@ -41,3 +41,28 @@ body {
 .status-ADVERTENCIA { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #f59e0b; }
 .status-OPTIMO { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
 .status-SUBESTIMADO { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #3b82f6; }
+
+/* Badge de Promedio - Estilo Dark Mode */
+#promedio-badge {
+    background-color: rgba(30, 41, 59, 0.7); /* Slate 800 con transparencia */
+    letter-spacing: 0.5px;
+}
+
+/* Colores personalizados usando la paleta Indigo/Emerald */
+.status-ALTA-CALIDAD {
+    background-color: rgba(16, 185, 129, 0.2) !important; /* Emerald */
+    color: #10b981 !important;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.status-CALIDAD-BAJA {
+    background-color: rgba(239, 68, 68, 0.2) !important; /* Red */
+    color: #ef4444 !important;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.status-ACEPTABLE-CON-RIESGO {
+    background-color: rgba(245, 158, 11, 0.2) !important; /* Amber */
+    color: #f59e0b !important;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}

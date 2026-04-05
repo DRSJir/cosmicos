@@ -138,11 +138,29 @@ function renderizarGrafica(apiData) {
 }
 
 function actualizarInterfaz(data) {
-    const badge = document.getElementById('status-badge');
+    const sBadge = document.getElementById('status-badge');
+    const pBadge = document.getElementById('promedio-badge');
 
-    // Formatear el estado para la clase CSS (quitar espacios)
-    const estadoLimpio = data.estado.replace(/\s+/g, '-');
+    // Actualizar texto del promedio
+    pBadge.innerHTML = `<i class="bi bi-calculator me-1"></i> Promedio: ${data.densidadGlobal}`;
 
-    badge.innerText = `${data.estado} | Promedio: ${data.densidadGlobal} def/KLOC`;
-    badge.className = `status-badge status-${estadoLimpio}`;
+    // Colores
+    let colorClass = "text-bg-secondary"; // Color por defecto
+    let icono = '<i class="bi bi-info-circle-fill me-1"></i> ';
+
+    const estado = data.estado.trim();
+
+    if (estado === "ALTA CALIDAD") {
+        colorClass = "text-bg-success";
+        icono = '<i class="bi bi-check-circle-fill me-1"></i> ';
+    } else if (estado === "ACEPTABLE CON RIESGO") {
+        colorClass = "text-bg-warning";
+        icono = '<i class="bi bi-exclamation-triangle-fill me-1"></i> ';
+    } else if (estado === "BAJA CALIDAD") {
+        colorClass = "text-bg-danger";
+        icono = '<i class="bi bi-x-octagon-fill me-1"></i> ';
+    }
+
+    sBadge.className = `badge rounded-pill ${colorClass} p-2 px-3 shadow-sm`;
+    sBadge.innerHTML = icono + estado;
 }
