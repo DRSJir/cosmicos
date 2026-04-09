@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Productividad del Equipo</title>
+
+<link rel="stylesheet" href="css/estilos.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div id="sidebar-container"></div>
+
+<!-- Contenido principal -->
+<div class="main-content">
+
+<div class="container-card">
+
+<h1> Productividad del Equipo</h1>
+
+<p class="descripcion">
+Ingresa los datos del equipo para calcular el indicador de productividad.
+</p>
+
+<div class="form-grid">
+
+<div class="input-group">
+<label> Tareas completadas</label>
+<input type="number" id="tareas" placeholder="Ej: 12">
+</div>
+
+<div class="input-group">
+<label> Días trabajados</label>
+<input type="number" id="dias" placeholder="Ej: 4">
+</div>
+
+</div>
+
+<button class="btn-calcular" onclick="calcular()">
+Calcular productividad
+</button>
+
+<div class="resultados">
+
+<h2 id="resultado">0</h2>
+
+<span id="estado" class="status-badge"></span>
+
+</div>
+
+<h3 class="titulo-indicador">Indicador de productividad</h3>
+
+<div class="gauge">
+
+<div class="gauge-body">
+
+<div class="gauge-scale">
+<div class="scale-red"></div>
+<div class="scale-yellow"></div>
+<div class="scale-green"></div>
+</div>
+
+<div class="gauge-needle" id="needle"></div>
+
+<div class="gauge-center">
+<span id="gaugeValue">0</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/productividad.js"></script>
+
+</body>
+
+</html>
