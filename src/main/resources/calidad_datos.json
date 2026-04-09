@@ -1,0 +1,8 @@
+[
+  { "modulo": "Autenticación", "defectos": 2, "kloc": 0.8 },
+  { "modulo": "Pasarela de Pagos", "defectos": 14, "kloc": 2.5 },
+  { "modulo": "Gestión de Usuarios", "defectos": 5, "kloc": 1.9 },
+  { "modulo": "Reportes PDF", "defectos": 1, "kloc": 0.4 },
+  { "modulo": "API Externa", "defectos": 8, "kloc": 1.2 },
+  { "modulo": "Carrito de Compras", "defectos": 3, "kloc": 1.5 }
+]

@@ -1,15 +1,32 @@
 package mx.edu.uacm.is.slt.ms.cosmicos;
+import mx.edu.uacm.is.slt.ms.cosmicos.controlador.*;
 
 import io.javalin.Javalin;
 import io.javalin.http.staticfiles.Location;
 
 public class App {
 
+	
 	public static void main(String[] args) {
-		var app = Javalin.create(config -> {
-            // Esto le dice a Javalin que busque archivos en src/main/resources/public
-            config.staticFiles.add("/public/inicio.html", Location.CLASSPATH);
-        }).start("0.0.0.0",8080);
+	    Javalin app = Javalin.create(config -> {
+	        config.staticFiles.add("/public", Location.CLASSPATH);
+	    }).start(8080);
+	    
+	    
+	    app.get("/", ctx -> ctx.redirect("/desviacion.html"));
+	    
+	    
+
+	    // Ruta productividad
+	    app.post("/productividad", ProductividadController::calcular);
+
+	    // Definición de la ruta usando referencia de método
+	    app.get("/api/desviacion", DesviacionControlador::obtenerAnalisisDesviacion);
+	    app.post("/api/subir-desviacion", DesviacionControlador::subirYAnalizar);
+    
+      //Densidad de defectos
+      app.get("/api/densidad", DensidadDefectosControlador::obtenerAnalisisDensidadDefectos);
+      app.post("/api/densidad/subir", DensidadDefectosControlador::subirYAnalizar);
 
 	}
 
