@@ -1,85 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-<meta charset="UTF-8">
-<title>Productividad del Equipo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productividad del Equipo</title>
 
-<link rel="stylesheet" href="css/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/estilos.css">
 </head>
 
 <body>
 
-<!-- Sidebar -->
-<div id="sidebar-container"></div>
+    <div id="sidebar-container"></div>
 
-<!-- Contenido principal -->
-<div class="main-content">
+    <main class="main-content">
 
-<div class="container-card">
+        <div class="container-card">
 
-<h1> Productividad del Equipo</h1>
+            <header class="mb-4 pb-3 border-bottom border-secondary">
+                <h1 class="h4 mb-1">Productividad del Equipo</h1>
+                <small class="text-secondary">
+                    Métrica: <b>Tareas completadas por día</b>
+                </small>
+            </header>
 
-<p class="descripcion">
-Ingresa los datos del equipo para calcular el indicador de productividad.
-</p>
+            <p class="descripcion mb-4">
+                Ingresa los datos del equipo para calcular el indicador de productividad.
+            </p>
 
-<div class="form-grid">
+            <div class="row g-3 mb-4">
 
-<div class="input-group">
-<label> Tareas completadas</label>
-<input type="number" id="tareas" placeholder="Ej: 12">
-</div>
+                <div class="col-md-6">
+                    <label class="form-label">Tareas completadas</label>
+                    <input type="number" id="tareas" class="form-control bg-dark text-white border-secondary" placeholder="Ej: 12">
+                </div>
 
-<div class="input-group">
-<label> Días trabajados</label>
-<input type="number" id="dias" placeholder="Ej: 4">
-</div>
+                <div class="col-md-6">
+                    <label class="form-label">Días trabajados</label>
+                    <input type="number" id="dias" class="form-control bg-dark text-white border-secondary" placeholder="Ej: 4">
+                </div>
 
-</div>
+            </div>
 
-<button class="btn-calcular" onclick="calcular()">
-Calcular productividad
-</button>
+            <button class="btn btn-primary mb-4" onclick="calcular()">
+                <i class="bi bi-calculator me-1"></i>
+                Calcular productividad
+            </button>
 
-<div class="resultados">
+            <div class="resultados text-center mb-5">
 
-<h2 id="resultado">0</h2>
+                <h2 id="resultado">0</h2>
 
-<span id="estado" class="status-badge"></span>
+                <span id="estado" class="badge rounded-pill p-2 px-3"></span>
 
-</div>
+            </div>
 
-<h3 class="titulo-indicador">Indicador de productividad</h3>
+            <h5 class="mb-3">Indicador de productividad</h5>
 
-<div class="gauge">
+            <div class="gauge">
 
-<div class="gauge-body">
+                <div class="gauge-body">
 
-<div class="gauge-scale">
-<div class="scale-red"></div>
-<div class="scale-yellow"></div>
-<div class="scale-green"></div>
-</div>
+                    <div class="gauge-scale">
+                        <div class="scale-red"></div>
+                        <div class="scale-yellow"></div>
+                        <div class="scale-green"></div>
+                    </div>
 
-<div class="gauge-needle" id="needle"></div>
+                    <div class="gauge-needle" id="needle"></div>
 
-<div class="gauge-center">
-<span id="gaugeValue">0</span>
-</div>
+                    <div class="gauge-center">
+                        <span id="gaugeValue">0</span>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </main>
 
-<script src="js/productividad.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/js/productividad.js"></script>
+
+    <script>
+        function resaltarEnlaceActivo() {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('#sidebar .nav-link');
+
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        fetch('/barraLateral.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+                resaltarEnlaceActivo();
+            })
+            .catch(err => console.error("Error cargando la barra lateral:", err));
+    </script>
 
 </body>
 
