@@ -1,0 +1,7 @@
+[
+  { "etiqueta": "Login", "totales": 100, "exitosas": 95 },
+  { "etiqueta": "Registro", "totales": 100, "exitosas": 60 },
+  { "etiqueta": "Pago", "totales": 100, "exitosas": 30 },
+  { "etiqueta": "Carrito", "totales": 100, "exitosas": 85 },
+  { "etiqueta": "Perfil", "totales": 100, "exitosas": 50 }
+]

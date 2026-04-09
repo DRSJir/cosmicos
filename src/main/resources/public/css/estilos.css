@@ -45,6 +45,12 @@ body {
 .status-OPTIMO { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
 .status-SUBESTIMADO { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #3b82f6; }
 
+
+
+
+
+
+
 /* Badge de Promedio - Estilo Dark Mode */
 #promedio-badge {
     background-color: rgba(30, 41, 59, 0.7); /* Slate 800 con transparencia */
@@ -234,5 +240,32 @@ button:hover{
     justify-content:center;
     font-size:1.5rem;
     font-weight:bold;
+}
+
+
+/* ===== AJUSTES PARA APEXCHARTS (GRÁFICA ROUS) ===== */
+
+.apexcharts-menu {
+    background-color: #1e293b !important; /* mismo tono para mis cards */
+    color: #f8fafc !important;
+    border: 1px solid #334155;
+    border-radius: 8px;
+}
+
+.apexcharts-menu-item {
+    color: #f8fafc !important;
+    font-size: 14px;
+}
+
+.apexcharts-menu-item:hover {
+    background-color: #334155 !important;
+}
+
+.apexcharts-toolbar svg {
+    fill: #f8fafc !important;
+}
+
+#main-chart{
+	min-height: 400px;
 }
 
